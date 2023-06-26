@@ -1,9 +1,9 @@
 
 
-function ItemListContainer () {
+function ItemListContainer ({greetings}) {
     return (
         <div>
-            <h3>containerlist</h3>
+            <h3>{greetings}</h3>
         </div>
     );
 };

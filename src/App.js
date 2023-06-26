@@ -1,4 +1,5 @@
 
+import ItemListContainer from "./components/itemlist";
 import Main from "./components/main";
 <source />
 
@@ -8,9 +9,9 @@ import Main from "./components/main";
 function App() {
   return (
     <>  
-      <h1 className="nombreTienda">Monitorealo</h1>  
+       
       <Main />  
-
+      <ItemListContainer greetings={"Hola buenas, Fiiiiiiuuuuuumba"}/>
 
 
     </>
@@ -18,3 +19,5 @@ function App() {
 }
 
 export default App;
+
+
