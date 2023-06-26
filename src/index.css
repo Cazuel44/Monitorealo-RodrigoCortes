@@ -6,7 +6,12 @@
 }
 
 body{
-    background-color: rgb(142, 99, 243);
+    background-color: rgb(114, 2, 243);
+    font-family: 'Courgette', cursive;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
 }
 
 
@@ -16,7 +21,7 @@ body{
 }
 
 .nav-link.active{
-    border: solid black;
+    border: solid rgb(140, 0, 255);
     padding: 5px;
     border-radius: 8px;
 }
@@ -30,4 +35,5 @@ body{
     color: white;
     background-color: red;
     border-radius: 6px;
+    margin-left: 2px;
 }
