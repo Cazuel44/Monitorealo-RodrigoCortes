@@ -1,17 +1,23 @@
-import ItemListContainer from "./itemlist";
-import Navbarindex from "./navbar";
+import ItemListContainer from "./ItemListContainer";
+import Contador from "./ItemCount";
+import Carrito from "./Carrito";
+
 
 function Main () {
     return (
         <main className="mainIndex">
-            <h1 className="nombreTienda">Monitorealo</h1> 
-            <Navbarindex/>
-            <ItemListContainer/>
-            
 
+            
+            
+            <ItemListContainer/>
+            <Contador/>
+            <Carrito/>
+            
 
         </main>
     );
 };
 
 export default Main
+
+

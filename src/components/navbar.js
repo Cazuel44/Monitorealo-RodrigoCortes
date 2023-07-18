@@ -1,4 +1,5 @@
 import CartWidget from "./iconocarrito";
+import { NavLink } from "react-router-dom";
 
 
 function Navbarindex () {
@@ -9,9 +10,12 @@ function Navbarindex () {
             <div className="container-fluid">
                 <span className="navbar-text">
                     
-                    <a className="nav-link active" aria-current="page" href="./public/index.html">Inicio</a>
-                    <a className="nav-link active" aria-current="page" href="./public/index.html">Contácto</a>
-                    <a className="nav-link active" aria-current="page" href="./public/index.html">Sobre nosotros</a>
+                    <NavLink to="/">Inicio</NavLink>
+                    <NavLink to="/Monitores/AOC">AOC</NavLink>
+                    <NavLink to="/Monitores/Apple">Apple</NavLink>
+                    <NavLink to="/Monitores/ASUS">ASUS</NavLink>
+                    <NavLink to="/Monitores/LG">LG</NavLink>
+                    <NavLink to="/Monitores/Samsung">Samsung</NavLink>
                     <CartWidget/>
 
                 </span>

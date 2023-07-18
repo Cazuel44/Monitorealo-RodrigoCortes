@@ -5,6 +5,10 @@
     
 }
 
+html {
+    height: 100%;
+}
+
 body{
     background-color: rgb(114, 2, 243);
     font-family: 'Courgette', cursive;
@@ -12,12 +16,24 @@ body{
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.nombreTienda {
+    margin-left: 10px;
+    
 }
 
 
 .navbar-text {
     display: flex;
     gap: 20px;
+}
+
+.active {
+    color: purple;
 }
 
 .nav-link.active{
@@ -36,4 +52,83 @@ body{
     background-color: red;
     border-radius: 6px;
     margin-left: 2px;
+}
+
+/* Body */
+
+
+
+.contadorIndex {
+    background-color: white;
+    margin-left: 10px;
+    width: 30%;
+    border: solid black;
+    border-radius: 10px;
+    padding: 5px;
+    color: black;
+}
+
+.btnContador {
+    background-color: rgb(135, 93, 163);
+    border: solid purple;
+    padding: 2px;
+    margin-right: 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.tituloProductos {
+    grid-column: 1 / -1;
+}
+
+.containerProductos{
+    
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr 1fr 1fr;
+    
+    padding: 30px;
+    gap: 10px;
+    
+}
+
+.cardProductos {
+    background-color: white;
+    border: solid black;
+    color: black;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.fotoProducto{
+    width: 80%;
+    height: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footerIndex {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 100px;
+    grid-column-gap: 2px;
+    grid-row-gap: 0px;
+    justify-items: stretch;
+    align-items: stretch;
+    margin-top: auto;
+    
+}
+
+.textoFooter {
+    display: flex;
+    justify-content: center;
 }
