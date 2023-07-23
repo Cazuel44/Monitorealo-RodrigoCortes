@@ -1,8 +1,9 @@
 import { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import Itemlist from "./itemlist";
-import Detalle from "./ItemDetail";
+import Contador from "./ItemCount";
+
 /* import Detalle from "./ItemDetail"; */
+
 
 
 
@@ -25,7 +26,7 @@ function ItemListContainer () {
     
     /* const [detalleProducto, setDetalleProducto] = useState(null); */
 
-   /*  const navigate = useNavigate(); */
+   
 
     
     
@@ -75,17 +76,14 @@ function ItemListContainer () {
                 <div key={dato.id} className="cardProductos">
                     <img className="fotoProducto" src={dato.imagen} alt=""/>
                     <h3>{dato.nombre}</h3>
-                    <p>PRECIO $:{dato.precio} <button className="btnDetalle btnagregar" ><Link to={`/detalle/${datos.id}`} className="btnDetalle btnagregar">Detalle</Link></button> <button className="btnDetalle btnagregar" onClick={()=>handleClickAgregarAlCarrito(dato)} > agregar al carro</button></p>
+                    <p>PRECIO $:{dato.precio} <button className="btnDetalle btnagregar" ><Link to={`/detalle/${dato.id}`} className="btnDetalle btnagregar">Detalle</Link></button> <button className="btnDetalle btnagregar" onClick={()=>handleClickAgregarAlCarrito(dato)} > agregar al carro</button></p>
                     
                 </div>
             ))}
             
-           {/*  {detalleProducto && <Detalle datos={datos} />} */}
-            
-            
-           <Itemlist datos={datos}/>
-           
+           <Contador/>
         </div>
+        
     );
     
     

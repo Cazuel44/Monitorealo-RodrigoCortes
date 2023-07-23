@@ -3,7 +3,7 @@ import Footer from "./components/Footer"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Detalle from "./components/ItemDetail";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import { useState, useEffect } from "react";
+/* import { useState, useEffect } from "react"; */
 import ItemListContainer from "./components/ItemListContainer";
 
 <source />
@@ -11,7 +11,7 @@ import ItemListContainer from "./components/ItemListContainer";
 function App() {
 
 
-  let [datos, setDatos] = useState([]);
+ /*  let [datos, setDatos] = useState([]);
   let url = "/Inventario.json";
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function App() {
       })
     .catch(error => console.log("Vamilos merga", error))
   }
-
+ */
   return (
     <>
       <BrowserRouter>
@@ -37,8 +37,8 @@ function App() {
 
         <Routes>
           <Route path="/" element={<ItemListContainer/>} /> 
-          <Route path="/detalle/:id" element={<Detalle datos={datos} />} />
-          <Route path="/Monitores/:marca" element={<ItemDetailContainer datos={datos} />} />
+          <Route path="/detalle/:id" element={<Detalle /* datos={datos} */ />} />
+          <Route path="/Monitores/:marca" element={<ItemDetailContainer /* datos={datos}  *//>} />
           <Route />
           <Route />
           <Route />

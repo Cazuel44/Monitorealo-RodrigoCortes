@@ -1,18 +1,14 @@
-import ItemListContainer from "./ItemListContainer";
-import Contador from "./ItemCount";
-import Carrito from "./Carrito";
+import App from "../App";
+
 
 
 function Main () {
     return (
         <main className="mainIndex">
 
+            <App/>
             
-            
-            <ItemListContainer/>
-            <Contador/>
-            <Carrito/>
-            
+           
 
         </main>
     );
