@@ -1,17 +1,17 @@
 {
     "monitores": [
-        {"nombre": "AOC Gaming 24G2", "descripcion": "Monitor Gamer 24pulgadas Curvo, Full HD, Panel VA, 165Hz(1ms), FreeSync Premium", "precio": 200000, "imagen": "img/monitor1.jpg", "stock": "15", "id": 1},
-        {"nombre": "AOC 24B2XHM", "descripcion": "Monitor 24pulgadas Full HD, Panel VA, 75Hz", "precio": 114000, "imagen": "img/monitor2.jpg", "stock": "7", "id": 2},
-        {"nombre": "AOC 20E1H", "descripcion": "Monitor 20pulgadas HD+, Panel TN, 60Hz", "precio": 97000, "imagen": "img/monitor3.jpg", "stock": "15", "id": 3},
-        {"nombre": "Apple MMYV3CI/A", "descripcion": "Monitor Studio Display 27pulgadas - 5K de Vidrio Nanotexturizado - Soporte con Inclinación y Altura Ajustable", "precio": 2340000, "imagen": "img/monitor4.jpg", "stock": "3", "id": 4},
-        {"nombre": "ASUS VG328H1B", "descripcion": "Monitor Gamer 32pulgadas Curvo TUF - Full HD, Panel VA, 165Hz(1ms), FreeSync Premium", "precio": 320000, "imagen": "img/monitor5.jpg", "stock": "10", "id": 5},
-        {"nombre": "ASUS XG49VQ", "descripcion": "Monitor Gamer 49pulgadas Rog Strix - DualFHD, Panel VA, 144Hz, FreeSync PremiumPro, HDR400 ", "precio": 980000, "imagen": "img/monitor6.jpg", "stock": "5", "id": 6},
-        {"nombre": "ASUS VY249HE", "descripcion": "Monitor 24pulgadas Full HD, Panel IPS, 75Hz(1ms), FreeSync", "precio": 130000, "imagen": "img/monitor7.jpg", "stock": "20", "id": 7},
-        {"nombre": "LG 27GR95QE-B", "descripcion": "Monitor Gamer 27pulgadas UltraGear - QHD, Panel OLED, 240Hz(0.03ms), HDR10, G-Sync y FreeSync Premium", "precio": 1000000, "imagen": "img/monitor8.jpg", "stock": "8", "id": 8},
-        {"nombre": "LG 32UN550-W", "descripcion": "Monitor 32pulgadas 4K, Panel VA, 60Hz, FreeSync, HDR10", "precio": 450000, "imagen": "img/monitor9.jpg", "stock": "6", "id": 9},
-        {"nombre": "LG 34WP65C-B", "descripcion": "Monitor 34pulgadas UltraWide Curvo WQHD, Panel VA, 160Hz, FreeSync, HDR10", "precio": 530000, "imagen": "img/monitor10.jpg", "stock": "4", "id": 10},
-        {"nombre": "Samsung LC49G95TSSLXZS", "descripcion": "Monitor Gamer 49pulgadas Curvo Odyssey G9 - DualQHD, Panel VA, 240Hz(1ms), FreeSync, HDR1000", "precio": 1250000, "imagen": "img/monitor11.jpg", "stock": "2", "id": 11},
-        {"nombre": "Samsung LS55BG970NLXZS", "descripcion": "Monitor Gamer 55pulgadas Curvo Odyssey Ark - 4K, Panel VA, 165Hz(1ms), FreeSync Premium Pro, HDR10+", "precio": 2500000, "imagen": "img/monitor12.jpg", "stock": "7", "id": 12}
+        {"nombre": "AOC Gaming 24G2", "marca":"AOC", "descripcion": "Monitor Gamer 24pulgadas Curvo, Full HD, Panel VA, 165Hz(1ms), FreeSync Premium", "precio": 200000, "imagen": "img/monitor1.jpg", "stock": "15", "id": 1},
+        {"nombre": "AOC 24B2XHM", "marca":"AOC", "descripcion": "Monitor 24pulgadas Full HD, Panel VA, 75Hz", "precio": 114000, "imagen": "img/monitor2.jpg", "stock": "7", "id": 2},
+        {"nombre": "AOC 20E1H", "marca":"AOC", "descripcion": "Monitor 20pulgadas HD+, Panel TN, 60Hz", "precio": 97000, "imagen": "img/monitor3.jpg", "stock": "15", "id": 3},
+        {"nombre": "Apple MMYV3CI/A", "marca":"Apple", "descripcion": "Monitor Studio Display 27pulgadas - 5K de Vidrio Nanotexturizado - Soporte con Inclinación y Altura Ajustable", "precio": 2340000, "imagen": "img/monitor4.jpg", "stock": "3", "id": 4},
+        {"nombre": "ASUS VG328H1B", "marca":"ASUS", "descripcion": "Monitor Gamer 32pulgadas Curvo TUF - Full HD, Panel VA, 165Hz(1ms), FreeSync Premium", "precio": 320000, "imagen": "img/monitor5.jpg", "stock": "10", "id": 5},
+        {"nombre": "ASUS XG49VQ", "marca":"ASUS", "descripcion": "Monitor Gamer 49pulgadas Rog Strix - DualFHD, Panel VA, 144Hz, FreeSync PremiumPro, HDR400 ", "precio": 980000, "imagen": "img/monitor6.jpg", "stock": "5", "id": 6},
+        {"nombre": "ASUS VY249HE", "marca":"ASUS", "descripcion": "Monitor 24pulgadas Full HD, Panel IPS, 75Hz(1ms), FreeSync", "precio": 130000, "imagen": "img/monitor7.jpg", "stock": "20", "id": 7},
+        {"nombre": "LG 27GR95QE-B", "marca":"LG", "descripcion": "Monitor Gamer 27pulgadas UltraGear - QHD, Panel OLED, 240Hz(0.03ms), HDR10, G-Sync y FreeSync Premium", "precio": 1000000, "imagen": "img/monitor8.jpg", "stock": "8", "id": 8},
+        {"nombre": "LG 32UN550-W", "marca":"LG", "descripcion": "Monitor 32pulgadas 4K, Panel VA, 60Hz, FreeSync, HDR10", "precio": 450000, "imagen": "img/monitor9.jpg", "stock": "6", "id": 9},
+        {"nombre": "LG 34WP65C-B", "marca":"LG", "descripcion": "Monitor 34pulgadas UltraWide Curvo WQHD, Panel VA, 160Hz, FreeSync, HDR10", "precio": 530000, "imagen": "img/monitor10.jpg", "stock": "4", "id": 10},
+        {"nombre": "Samsung LC49G95TSSLXZS", "marca":"Samsung", "descripcion": "Monitor Gamer 49pulgadas Curvo Odyssey G9 - DualQHD, Panel VA, 240Hz(1ms), FreeSync, HDR1000", "precio": 1250000, "imagen": "img/monitor11.jpg", "stock": "2", "id": 11},
+        {"nombre": "Samsung LS55BG970NLXZS", "marca":"Samsung", "descripcion": "Monitor Gamer 55pulgadas Curvo Odyssey Ark - 4K, Panel VA, 165Hz(1ms), FreeSync Premium Pro, HDR10+", "precio": 2500000, "imagen": "img/monitor12.jpg", "stock": "7", "id": 12}
     ]
 }
 

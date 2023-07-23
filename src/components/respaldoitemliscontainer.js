@@ -1,7 +1,6 @@
 import { useState, useEffect} from "react";
-import { Link } from "react-router-dom";
-import Itemlist from "./itemlist";
-import Detalle from "./ItemDetail";
+import { useNavigate} from "react-router-dom";
+
 /* import Detalle from "./ItemDetail"; */
 
 
@@ -20,12 +19,10 @@ function ItemListContainer () {
     let [carrito, setCarrito] = useState([]);
     console.log(carrito)
 
-    /* const [detalleProducto, setDetalleProducto] = useState(null); */
-
     
     /* const [detalleProducto, setDetalleProducto] = useState(null); */
 
-   /*  const navigate = useNavigate(); */
+    const navigate = useNavigate();
 
     
     
@@ -57,12 +54,9 @@ function ItemListContainer () {
         setCarrito([...carrito, producto]);
     };
 
-    /* const handleMostrarDetalle = (producto) => {
-        setDetalleProducto(producto);
-    }; */
-    /* const handleMostrarDetalle = (id) => {
-        navigate(`/detalle/${id}`);
-    }; */
+    const handleMostrarDetalle = (producto) => {
+        navigate(`/detalle/${producto.id}`, { state: { datos: datos } });
+    };
 
     
 
@@ -75,7 +69,7 @@ function ItemListContainer () {
                 <div key={dato.id} className="cardProductos">
                     <img className="fotoProducto" src={dato.imagen} alt=""/>
                     <h3>{dato.nombre}</h3>
-                    <p>PRECIO $:{dato.precio} <button className="btnDetalle btnagregar" ><Link to={`/detalle/${datos.id}`} className="btnDetalle btnagregar">Detalle</Link></button> <button className="btnDetalle btnagregar" onClick={()=>handleClickAgregarAlCarrito(dato)} > agregar al carro</button></p>
+                    <p>PRECIO $:{dato.precio} <button className="btnDetalle btnagregar" onClick={() => handleMostrarDetalle(dato)}>Detalle</button> <button className="btnDetalle btnagregar" onClick={()=>handleClickAgregarAlCarrito(dato)} > agregar al carro</button></p>
                     
                 </div>
             ))}
@@ -83,8 +77,7 @@ function ItemListContainer () {
            {/*  {detalleProducto && <Detalle datos={datos} />} */}
             
             
-           <Itemlist datos={datos}/>
-           
+            
         </div>
     );
     

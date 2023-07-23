@@ -1,9 +1,9 @@
-
-import ItemListContainer from "./components/ItemListContainer";
 import Header from "./components/Header";
 import Main from "./components/main";
 import Footer from "./components/Footer"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Detalle from "./components/ItemDetail";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 <source />
 
@@ -17,12 +17,12 @@ function App() {
       <BrowserRouter>
 
         <Header/>
-        <Main/>
+        
         <Routes>
           
-          <Route path="/" element={<p>inicio</p>}/>
-          {/* <Route path="/categoria/:nombre" element={</>}/> */}
-          <Route/>
+          <Route path="/" element={<Main/>}/>
+          <Route path="/detalle/:id" element={<Detalle />} />
+          <Route path="/Monitores/:marca" element={<ItemDetailContainer />}/>
           <Route/>
           <Route/>
           <Route/>

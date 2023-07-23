@@ -25,3 +25,11 @@ function Navbarindex () {
 };
 
 export default Navbarindex
+
+
+/* <NavLink to="/">Inicio</NavLink>
+<NavLink to="/Monitores/:marca">AOC</NavLink>
+<NavLink to="/Monitores/:marca">Apple</NavLink>
+<NavLink to="/Monitores/:marca">ASUS</NavLink>
+<NavLink to="/Monitores/:marca">LG</NavLink>
+<NavLink to="/Monitores/:marca">Samsung</NavLink> */

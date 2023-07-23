@@ -1,21 +1,17 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
-function Detalle({ datos }) {
+function Detalle() {
   const { id } = useParams();
+  const location = useLocation();
+  const { datos } = location.state;
+  const producto = datos.find((dato) => dato.id === parseInt(id));
+  const rutaImagen = `../${producto.imagen}`;
 
-  console.log(datos);
-
+  console.log(datos)
+  // buscar porque me da undefined y explota todo
   if (!datos) {
     return <div>Los datos están siendo cargados...</div>;
   }
-
-  const producto = datos.find((producto) => producto.id === parseInt(id));
-
-  if (!producto) {
-    return <div>Producto no encontrado</div>;
-  }
-
-  const rutaImagen = `../${producto.imagen}`;
 
   return (
     <div className="cardProductos">
