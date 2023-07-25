@@ -36,7 +36,7 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="/" element={<ItemListContainer/>} /> 
+          <Route path="/" element={<ItemListContainer datos={datos}/>} /> 
           <Route path="/detalle/:id" element={<Detalle datos={datos} />} />
           <Route path="/Monitores/:marca" element={<ItemDetailContainer datos={datos} />} />
           <Route />

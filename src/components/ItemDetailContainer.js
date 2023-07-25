@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ItemDetailContainer({ datos }) {
   const { marca } = useParams();  
@@ -23,7 +24,7 @@ function ItemDetailContainer({ datos }) {
         <div key={producto.id} className="cardProductos">
           <img className="fotoProducto" src={"/"+producto.imagen} alt="" />
           <h3>{producto.nombre}</h3>
-          <p>PRECIO $:{producto.precio}</p>
+          <p className="parrafoCard">PRECIO $:{producto.precio} <button className="btnDetalle btnagregar" ><Link to={`/detalle/${producto.id}`} className="btnDetalle btnagregar">Detalle</Link></button></p>
         </div>
       ))}
     </div>

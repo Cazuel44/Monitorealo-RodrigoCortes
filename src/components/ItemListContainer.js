@@ -12,19 +12,17 @@ import Contador from "./ItemCount";
 
 
 
-function ItemListContainer () {
+function ItemListContainer ({datos}) {
    
-    let [datos, setDatos] = useState([]);
+    /* let [datos, setDatos] = useState([]); */
 
-    let url = "/Inventario.json";
+    /* let url = "/Inventario.json"; */
 
     let [carrito, setCarrito] = useState([]);
     console.log(carrito)
 
     /* const [detalleProducto, setDetalleProducto] = useState(null); */
 
-    
-    /* const [detalleProducto, setDetalleProducto] = useState(null); */
 
    
 
@@ -33,7 +31,7 @@ function ItemListContainer () {
 
     
 
-    useEffect(()=> {
+    /* useEffect(()=> {
         obtenerDatos();
     }, []);
 
@@ -52,7 +50,7 @@ function ItemListContainer () {
         })
         .catch(error=>console.log("Vamilos merga", error))
     }
-
+ */
 
     const handleClickAgregarAlCarrito = (producto) => {
         setCarrito([...carrito, producto]);
@@ -76,7 +74,7 @@ function ItemListContainer () {
                 <div key={dato.id} className="cardProductos">
                     <img className="fotoProducto" src={dato.imagen} alt=""/>
                     <h3>{dato.nombre}</h3>
-                    <p>PRECIO $:{dato.precio} <button className="btnDetalle btnagregar" ><Link to={`/detalle/${dato.id}`} className="btnDetalle btnagregar">Detalle</Link></button> <button className="btnDetalle btnagregar" onClick={()=>handleClickAgregarAlCarrito(dato)} > agregar al carro</button></p>
+                    <p className="parrafoCard">PRECIO $:{dato.precio} <button className="btnDetalle btnagregar" ><Link to={`/detalle/${dato.id}`} className="btnDetalle btnagregar">Detalle</Link></button> <button className="btnDetalle btnagregar" onClick={()=>handleClickAgregarAlCarrito(dato)} > agregar al carro</button></p>
                     
                 </div>
             ))}
