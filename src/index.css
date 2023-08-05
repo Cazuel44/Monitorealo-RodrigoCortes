@@ -59,10 +59,10 @@ body{
 
 
 .contadorIndex {
-    background-color: white;
+    /* background-color: white; */
     margin-left: 10px;
     width: 100%;
-    border: solid black;
+    /* border: solid black; */
     border-radius: 10px;
     padding: 5px;
     color: black;
@@ -70,7 +70,7 @@ body{
 
 .btnContador {
     background-color: rgb(135, 93, 163);
-    border: solid purple;
+    border: purple;
     padding: 2px;
     margin-right: 20px;
     border-radius: 5px;
@@ -147,4 +147,20 @@ body{
     background-color: rgb(194, 138, 247);
     
     padding: 2px;
+}
+
+
+.containerProductosCarrito{
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: white;
+    width: 95%;
+    border-radius: 5px;
+    color: black;
+    padding: 10px;
+}
+
+.cardProductosCarrito{
+    color: black;
+    margin-left: 10px;
 }

@@ -1,9 +1,9 @@
-import { useState } from "react";
 
 
-function Contador(props) {
+
+function Contador({contador, handleSuma, handleResta, handleLimpiar, handleClickAgregarAlCarrito}) {
     // estados
-    let [contador, setContador] = useState(0) 
+     
 
 
     // Efectos
@@ -11,24 +11,7 @@ function Contador(props) {
 
     //Acciones
 
-    function handleSuma() {
-       /*  if (contador <= props.stock) {
-            
-        } */
-        setContador(contador + 1)
-    }
-
-    function handleResta() {
-        if (contador > 0) {
-            setContador(contador - 1)
-        } 
-        
-    }
-
-    function handleLimpiar() {
-        setContador(contador = 0)
-    }
-
+   
 
 
 
@@ -36,13 +19,15 @@ function Contador(props) {
 
     return(
         <div className="contadorIndex">
-            <h3>producto</h3>
-            <p>{contador}</p>
+            {/* <h3>producto</h3> */}
+            
             <div>
-                <button onClick={handleSuma} className="btnContador">Sumar</button>
-                <button onClick={handleResta} className="btnContador">Restar</button>
+                <button onClick={handleSuma} className="btnContador">+</button>
+                <button onClick={handleResta} className="btnContador">-</button>
+                <p>Cantidad {contador}</p>
                 <button onClick={handleLimpiar} className="btnContador">Limpiar</button>
             </div>
+            <button className="btnContador" onClick={handleClickAgregarAlCarrito}>Agregar al carrito</button>            
         </div>
     );
 };

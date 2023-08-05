@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import Contador from "./ItemCount";
+
 import Detalle from "./ItemDetail";
 
 
@@ -9,8 +9,7 @@ function ItemListContainer () {
 
     let url = "/Inventario.json";
 
-    let [carrito, setCarrito] = useState([]);
-    console.log(carrito)
+    
 
 
     useEffect(()=> {
@@ -29,12 +28,7 @@ function ItemListContainer () {
             
         })
         .catch(error=>console.log("Vamilos merga", error))
-    }
-
-
-    /* const handleClickAgregarAlCarrito = (producto) => {
-        setCarrito([...carrito, producto]);
-    }; */
+    };
 
 
     return (
@@ -44,7 +38,7 @@ function ItemListContainer () {
                 <Detalle key={producto.id} producto={producto}/>
             ))}
             
-            <Contador/>
+            
         </div>
         
     );

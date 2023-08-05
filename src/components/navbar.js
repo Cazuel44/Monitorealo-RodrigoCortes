@@ -1,8 +1,10 @@
-import CartWidget from "./iconocarrito";
+import CartWidget from "./Cartwidget";
 import { NavLink } from "react-router-dom";
 
 
 function Navbarindex () {
+
+    
     return (
         
         <nav className="navbar bg-body-tertiary">
@@ -16,7 +18,7 @@ function Navbarindex () {
                     <NavLink to="/Monitores/ASUS">ASUS</NavLink>
                     <NavLink to="/Monitores/LG">LG</NavLink>
                     <NavLink to="/Monitores/Samsung">Samsung</NavLink>
-                    <CartWidget/>
+                    <NavLink to="/Carrito"><CartWidget/></NavLink>
 
                 </span>
             </div>
@@ -27,9 +29,3 @@ function Navbarindex () {
 export default Navbarindex
 
 
-/* <NavLink to="/">Inicio</NavLink>
-<NavLink to="/Monitores/:marca">AOC</NavLink>
-<NavLink to="/Monitores/:marca">Apple</NavLink>
-<NavLink to="/Monitores/:marca">ASUS</NavLink>
-<NavLink to="/Monitores/:marca">LG</NavLink>
-<NavLink to="/Monitores/:marca">Samsung</NavLink> */

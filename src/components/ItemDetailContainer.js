@@ -1,5 +1,8 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect, useContext} from "react";
 import { useParams } from "react-router-dom";
+import Contador from "./ItemCount";
+import Carrito from "./Carrito";
+import { CarritoContext } from "../context/CarritoContex";
 
 
 function ItemDetailContainer () {
@@ -7,8 +10,12 @@ function ItemDetailContainer () {
     let [datos, setDatos] = useState([]);
     let [producto, setProducto] = useState({});
     let url = "/Inventario.json";
-    
-    
+    let [contador, setContador] = useState(1);
+    const {carrito, handleClickAgregarAlCarrito} = useContext(CarritoContext)
+    console.log(carrito)
+
+
+
 
     useEffect(()=> {
         obtenerDatos();
@@ -25,18 +32,38 @@ function ItemDetailContainer () {
             setDatos(datosJson.monitores); 
         })
         .catch(error=>console.log("Vamilos merga", error))
-    }
+    };
+
+
+    function handleSuma() {
+        /* if (contador <= datos.stock) {
+             
+        } */
+        setContador(contador + 1) 
+    };
+
+    function handleResta() {
+        if (contador > 1) {
+            setContador(contador - 1)
+        } 
+    };
+
+    function handleLimpiar() {
+        setContador(contador = 0)
+    };
+
+    
+
 
     return (
         <div className="cardProductos">
             <h3>{producto.nombre}</h3>
             <img className="fotoProducto" src={"/"+producto.imagen} alt="" />
-                <div>
-                <button className="btnDetalle btnagregar" /* onClick={()=>handleClickAgregarAlCarrito(dato)} */ > agregar al carro</button> 
-                </div>
+            
             <p>Precio: ${producto.precio}</p>
             <p>Descripción: {producto.descripcion}</p>
 
+            <Contador contador={contador} handleSuma={handleSuma} handleResta={handleResta} handleLimpiar={handleLimpiar} handleClickAgregarAlCarrito={() => {handleClickAgregarAlCarrito(producto, contador)}}/>
         </div>    
     );
  
