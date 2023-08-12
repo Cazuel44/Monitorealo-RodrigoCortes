@@ -1,48 +1,51 @@
 import { useState, useEffect} from "react";
-
 import Detalle from "./ItemDetail";
-
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/config.js";
+import Loader from "./Loader";
 
 function ItemListContainer () {
    
     let [datos, setDatos] = useState([]);
+    const [loading, setLoading] = useState(true)
 
-    let url = "/Inventario.json";
+    useEffect(() => {
+        const productosRef = collection(db, "productos");
 
-    
-
-
-    useEffect(()=> {
-        obtenerDatos();
+        setTimeout(() => {
+            getDocs(productosRef)
+              .then((respuesta) => {
+                setDatos(
+                  respuesta.docs.map((doc) => {
+                    return { ...doc.data(), id: doc.id };
+                  })
+                );
+                
+              })
+              .catch((error) => {
+                console.error("GG base de datos", error);
+              })
+              .finally(()=> {
+                setLoading(false)
+              });
+        }, 1000);      
     }, []);
 
-    
-    const obtenerDatos = ()=> {
-       
-        fetch(url)
-        .then(respuesta=>respuesta.json())
-        .then((datosJson) => {
-            console.log(datosJson);
-            console.log(Array.isArray(datosJson.monitores));
-            setDatos(datosJson.monitores);
-            
-        })
-        .catch(error=>console.log("Vamilos merga", error))
-    };
-
-
-    return (
-        <div className="containerProductos">
-            <h2 className="tituloProductos">!Productos!</h2>
-            {datos.map(producto=>(
-                <Detalle key={producto.id} producto={producto}/>
-            ))}
-            
-            
-        </div>
-        
-    );
-    
+    if (loading) {
+        return (
+            <Loader/>
+        )
+    } else {
+        return (
+            <div className="containerProductos">
+                <h2 className="tituloProductos">!Productos!</h2>
+                {datos.map(producto=>(
+                    <Detalle key={producto.id} producto={producto}/>
+                    
+                ))}
+            </div>
+        )
+    } 
 };
 
 export default ItemListContainer

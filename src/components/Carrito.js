@@ -1,17 +1,16 @@
 import { useContext} from "react";
 import { CarritoContext } from "../context/CarritoContex";
-import Contador from "./ItemCount";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
-function Carrito(/* {carrito = []} */) {
-    
+function Carrito() {
     const {carrito, precioTotal, limpiarCarrito} = useContext(CarritoContext);
-
     const handleLimpiar = () => {
         limpiarCarrito()
+        toast.success("Carrito limpio")
     }
 
-    
     return (
         <div className='containerProductosCarrito'>
             <h2 className='tituloProductos'>Tu Carrito</h2>
@@ -36,12 +35,10 @@ function Carrito(/* {carrito = []} */) {
             <> 
                 <h3>Valor TOTAL $:{precioTotal()}</h3> 
                 <button className="btnContador" onClick={handleLimpiar}>Limpiar carrito</button>
-            </>}
-            
+                <Link to="/Checkout">Confirmar compra</Link>
+            </>}       
         </div>
     )
-
 };
-
 
 export default Carrito;

@@ -4,43 +4,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemCategoryContainer from "./components/ItemCategoryContainer";
-import { CarritoContext } from "./context/CarritoContex";
 import Carrito from "./components/Carrito";
 import { CarrtProvider } from "./context/CarritoContex";
+import Checkout from "./components/Checkout";
+import { ToastContainer } from "react-toastify";
+
+
 <source />
 
 function App() {
-  /* let [carrito, setCarrito] = useState([]);
-  function handleClickAgregarAlCarrito(producto, contador) {
-    const itemAgregado = {...producto, contador};
-    const nuevoCarrito = [...carrito];
-    const estaEnElCarrito = nuevoCarrito.find((producto) => producto.id === itemAgregado.id)
-
-    if(estaEnElCarrito){
-        estaEnElCarrito.contador += contador;
-    } else {
-        nuevoCarrito.push(itemAgregado)
-    }
-    setCarrito(nuevoCarrito)
-    
-  };
-
-  const cantidadCarrito = () => {
-    return carrito.reduce((acc, prod) => acc + prod.contador, 0);
-  }
-
-  const precioTotal = () => {
-    return carrito.reduce((acc, prod) => acc + prod.precio * prod.contador, 0); 
-  }
-
-  const limpiarCarrito = () => {
-    setCarrito([]);
-  } */
-
-
+ 
   return (
     <>
-      <CarrtProvider> {/* cantidad carrito no funciona */}
+      <CarrtProvider> 
         <BrowserRouter>
           <Header />
           <Routes>
@@ -48,10 +24,12 @@ function App() {
             <Route path="/detalle/:id" element={<ItemDetailContainer/>} />
             <Route path="/Monitores/:marca" element={<ItemCategoryContainer/>} />
             <Route path="/Carrito" element={<Carrito/>} /> 
+            <Route path="/Checkout" element={<Checkout/>} /> 
           </Routes>
           <Footer />
         </BrowserRouter>
       </CarrtProvider>
+      <ToastContainer/>
     </>
   );
 }

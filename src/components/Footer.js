@@ -1,8 +1,6 @@
 
-
-
-
 function Footer() {
+    
     return(
         <div className="footerIndex">
             <img src="" className="imagenLogo" alt=""/>

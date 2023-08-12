@@ -1,44 +1,31 @@
 import { useState, useEffect, useContext} from "react";
 import { useParams } from "react-router-dom";
 import Contador from "./ItemCount";
-import Carrito from "./Carrito";
 import { CarritoContext } from "../context/CarritoContex";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/config"
+import { toast } from "react-toastify";
 
 
 function ItemDetailContainer () {
     const { id } = useParams();
-    let [datos, setDatos] = useState([]);
     let [producto, setProducto] = useState({});
-    let url = "/Inventario.json";
     let [contador, setContador] = useState(1);
-    const {carrito, handleClickAgregarAlCarrito} = useContext(CarritoContext)
-    console.log(carrito)
-
-
-
-
+    const {handleClickAgregarAlCarrito} = useContext(CarritoContext);
+    
     useEffect(()=> {
-        obtenerDatos();
+        const docRef = doc(db, "productos", id);
+        getDoc(docRef)
+            .then((respuesta)=> {
+
+                const producto = respuesta.data();
+                if(producto){
+                  setProducto(producto);  
+                }
+            })
     }, []);
 
-    const obtenerDatos = ()=> {
-        fetch(url)
-        .then(respuesta=>respuesta.json())
-        .then((datosJson) => {
-            const producto = datosJson.monitores.find((monitor) => monitor.id === parseInt(id));
-            if(producto){
-              setProducto(producto)  
-            }
-            setDatos(datosJson.monitores); 
-        })
-        .catch(error=>console.log("Vamilos merga", error))
-    };
-
-
     function handleSuma() {
-        /* if (contador <= datos.stock) {
-             
-        } */
         setContador(contador + 1) 
     };
 
@@ -49,11 +36,9 @@ function ItemDetailContainer () {
     };
 
     function handleLimpiar() {
-        setContador(contador = 0)
+        setContador(contador = 1)
+        toast.success("Cantidad 1")
     };
-
-    
-
 
     return (
         <div className="cardProductos">
@@ -66,7 +51,6 @@ function ItemDetailContainer () {
             <Contador contador={contador} handleSuma={handleSuma} handleResta={handleResta} handleLimpiar={handleLimpiar} handleClickAgregarAlCarrito={() => {handleClickAgregarAlCarrito(producto, contador)}}/>
         </div>    
     );
- 
 };
 
 export default ItemDetailContainer

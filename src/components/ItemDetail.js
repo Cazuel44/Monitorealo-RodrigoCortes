@@ -1,14 +1,10 @@
 import { Link } from "react-router-dom";
 
-
-
 function Detalle({ producto }) {
   
-
   if (!producto) {
     return <div>Producto no encontrado</div>;
   }
-
 
   return (
     <div key={producto.id} className="cardProductos">
@@ -25,6 +21,3 @@ function Detalle({ producto }) {
 
 export default Detalle;
 
-
-
-/* <button className="btnDetalle btnagregar" onClick={()=>handleClickAgregarAlCarrito(producto)} > agregar al carro</button>*/

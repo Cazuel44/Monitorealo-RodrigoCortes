@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const CarritoContext = createContext();
 
@@ -11,12 +12,12 @@ export const CarrtProvider = ({children}) => {
         const estaEnElCarrito = nuevoCarrito.find((producto) => producto.id === itemAgregado.id);
 
         if (estaEnElCarrito) {
-        estaEnElCarrito.contador += contador;
+            estaEnElCarrito.contador += contador;
         } else {
-        nuevoCarrito.push(itemAgregado);
+            nuevoCarrito.push(itemAgregado);
         }
         setCarrito(nuevoCarrito);
-        /* console.log(nuevoCarrito) */
+        toast.success("Producto agregado")
     };
 
     const cantidadCarrito = () => {
